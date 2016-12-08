@@ -8,6 +8,7 @@ class Migration_Alter_invoice extends CI_Migration {
 			'arm_color varchar(45) DEFAULT \'\' NOT NULL',
 			'arm_tipo varchar(45) DEFAULT \'\' NOT NULL',
 			'arm_tamanio varchar(45) DEFAULT \'\' NOT NULL',
+			'arm_arocompleto varchar(45) DEFAULT \'\' NOT NULL',
 			'hc_traum varchar(45) DEFAULT \'\' NOT NULL',
 			'hc_motivo integer(5) DEFAULT 0 NOT NULL',
 			'hc_otromot text DEFAULT \'\' NOT NULL',

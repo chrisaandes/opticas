@@ -8,8 +8,9 @@ class Invoice_m extends CI_Model {
 		parent::__construct();
 	}
 
-	function insert_bed($array) {
-		$error = $this->db->insert_batch($array);
+	function insert($array) {
+		
+		$error = $this->db->insert('invoice',$array);
 		return TRUE;
 	}
 
