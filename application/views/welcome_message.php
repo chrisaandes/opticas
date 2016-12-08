@@ -6,83 +6,564 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta charset="utf-8">
 	<title>Welcome to CodeIgniter</title>
 
-	<style type="text/css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-	::selection { background-color: #E13300; color: white; }
-	::-moz-selection { background-color: #E13300; color: white; }
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-	body {
-		background-color: #fff;
-		margin: 40px;
-		font: 13px/20px normal Helvetica, Arial, sans-serif;
-		color: #4F5155;
-	}
-
-	a {
-		color: #003399;
-		background-color: transparent;
-		font-weight: normal;
-	}
-
-	h1 {
-		color: #444;
-		background-color: transparent;
-		border-bottom: 1px solid #D0D0D0;
-		font-size: 19px;
-		font-weight: normal;
-		margin: 0 0 14px 0;
-		padding: 14px 15px 10px 15px;
-	}
-
-	code {
-		font-family: Consolas, Monaco, Courier New, Courier, monospace;
-		font-size: 12px;
-		background-color: #f9f9f9;
-		border: 1px solid #D0D0D0;
-		color: #002166;
-		display: block;
-		margin: 14px 0 14px 0;
-		padding: 12px 10px 12px 10px;
-	}
-
-	#body {
-		margin: 0 15px 0 15px;
-	}
-
-	p.footer {
-		text-align: right;
-		font-size: 11px;
-		border-top: 1px solid #D0D0D0;
-		line-height: 32px;
-		padding: 0 10px 0 10px;
-		margin: 20px 0 0 0;
-	}
-
-	#container {
-		margin: 10px;
-		border: 1px solid #D0D0D0;
-		box-shadow: 0 0 8px #D0D0D0;
-	}
-	</style>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
 
-<div id="container">
-	<h1>Welcome to CodeIgniter!</h1>
+	<div class="row">
+		<div class="col-xs-12">
+			<form action="#index.php/invoice/validate_pacient" class="form-horizontal" role="form" method="post" accept-charset="utf-8">
 
-	<div id="body">
-		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
+				<div class="panel panel-default">
+					<div class="panel-body">
 
-		<p>If you would like to edit this page you'll find it located at:</p>
-		<code>application/views/welcome_message.php</code>
+						<legend>ARMAZON</legend>
+						<div class="form-group">
+							<div class="col-sm-6">
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">MODELO</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label for="inputColor" class="col-sm-4 control-label">COLOR</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_color" id="inputColor" class="form-control">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label for="inputTipo" class="col-sm-4 control-label">TIPO</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_type" id="inputTipo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label for="inputTamaño" class="col-sm-4 control-label">TAMAÑO</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_size" id="inputTamaño" class="form-control">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label for="inputArocompleto" class="col-sm-4 control-label">ARO COMPLETO</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_fullring" id="inputArocompleto" class="form-control">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 
-		<p>The corresponding controller for this page is found at:</p>
-		<code>application/controllers/Welcome.php</code>
 
-		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
-	</div>
 
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
+						<legend>HISTORIA CLINICA</legend>
+						<div class="form-group">
+							<div class="col-sm-12">
+								<div class="row">
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">TRAUMATISMO, ENFERMEDAD O CIRUGÍA OCULAR</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label for="inputColor" class="col-sm-4 control-label">MOTIVO DE LA CONSULTA</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_color" id="inputColor" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label for="inputColor" class="col-sm-4 control-label">OTRO MOTIVO DE LA CONSULTA(EN CASO DE QUE LO HAYA)</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_color" id="inputColor" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label for="inputColor" class="col-sm-4 control-label">OTRO MOTIVO DE LA CONSULTA(EN CASO DE QUE LO HAYA)</label>
+											<div class="col-sm-8">
+
+												<textarea class="form-control"></textarea>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label for="inputColor" class="col-sm-4 control-label">SALUD GENERAL, MAS INFORMACIÓN</label>
+											<div class="col-sm-8">
+
+												<textarea class="form-control"></textarea>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label for="inputColor" class="col-sm-4 control-label">RESUMEN DE INTERROGATORIO(OBSERVACIONES)</label>
+											<div class="col-sm-8">
+
+												<textarea class="form-control"></textarea>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<legend>EXAMENES PRELIMINARES</legend>
+						<div class="form-group">
+							<div class="col-sm-12">
+								<div class="row">
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">COVER TEST ALTERNANTE</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">COVER TEST UNILATERAL</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">REFLEJO CORNEAL</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">PPC</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+
+									<!--DIVIDER-->
+
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">PPA</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">PUPILAS: TAMAÑO</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">PUPILAS: DIRECTO</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">PUPILAS: CONSENSUAL</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+
+
+									<!--DIVIDER-->
+
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">MOTILIDAD OCULAR: FIJACIÓN</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">MOTILIDAD OCULAR: MOV. OCULARES H</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">MOTILIDAD OCULAR: SEGUIMIENTOS</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">MOTILIDAD OCULAR: SACÁDICOS</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+
+
+									<!--DIVIDER-->
+
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">CONFRONTACIONES</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">VISIÓN DE COLOR</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">ESTEREÓPSIS</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">CAMPOS CENTRALES</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+
+
+									<!--DIVIDER-->
+
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">OFTALMOSCOPÍA ANEXOS</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">OFTALMOSCOPÍA ANEXOS: OD</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">OFTALMOSCOPÍA ANEXOS: OI</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+						<legend>REFRACCIÓN</legend>
+						<div class="form-group">
+							<div class="col-sm-12">
+								<div class="row">
+
+
+									<!--DIVIDER-->
+
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">QUERATOMETRÍA OD</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">QUERATOMETRÍA OI</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">REFINOSCOPÍA ESTATICA OD</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">REFINOSCOPÍA ESTATICA OI</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+
+
+									<!--DIVIDER-->
+
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">REFINOSCOPÍA DINAMICA OD</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">REFINOSCOPÍA DINAMICA OI</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">SUBJETIVO BRICROMÁTICA OD</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">SUBJETIVO BRICROMÁTICA OI</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+
+
+									<!--DIVIDER-->
+
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">SUBJETIVO: CILINDRO CRUZADO OD</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">SUBJETIVO: CILINDRO CRUZADO OI</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">SUBJETIVO: ADICIÓN OD</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">SUBJETIVO: ADICIÓN OI</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="row">
+
+
+									<!--DIVIDER-->
+
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">SUBJETIVO: MÁXIMO POSITIVO OD</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">SUBJETIVO: MÁXIMO POSITIVO OI</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">SUBJETIVO: DIP</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+
+						<legend>PRESCRIPCION</legend>
+						<div class="form-group">
+							<div class="col-sm-6">
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label for="inputModelo" class="col-sm-4 control-label">DIAGNÓSTICO</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_model" id="inputModelo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label for="inputColor" class="col-sm-4 control-label">DIAGNÓSTICO OD</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_color" id="inputColor" class="form-control">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label for="inputTipo" class="col-sm-4 control-label">DIAGNÓSTICO OI</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_type" id="inputTipo" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label for="inputTamaño" class="col-sm-4 control-label">DIAGNÓSTICO ADD</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_size" id="inputTamaño" class="form-control">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label for="inputArocompleto" class="col-sm-4 control-label">TRATAMIENTO</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_fullring" id="inputArocompleto" class="form-control">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label for="inputArocompleto" class="col-sm-4 control-label">PRONOSTICO</label>
+											<div class="col-sm-8">
+												<input type="text" name="arm_fullring" id="inputArocompleto" class="form-control">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="col-sm-12">
+								<div class="form-group">
+									<label for="inputColor" class="col-sm-4 control-label">TRATAMIENTO Y OBSERVACIONES</label>
+									<div class="col-sm-8">
+
+										<textarea class="form-control"></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</form>
+</div>
 </div>
 
 </body>
