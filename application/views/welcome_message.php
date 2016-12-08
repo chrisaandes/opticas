@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<div class="row">
 		<div class="col-xs-12">
-			<form action="#index.php/invoice/validate_pacient" class="form-horizontal" role="form" method="post" accept-charset="utf-8">
+			<form action="welcome/add" class="form-horizontal" role="form" method="post" accept-charset="utf-8">
 
 				<div class="panel panel-default">
 					<div class="panel-body">
@@ -559,6 +559,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 					</div>
 				</div>
+
+				<button>Enviar</button>
 
 			</div>
 		</div>
